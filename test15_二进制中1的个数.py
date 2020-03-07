@@ -1,4 +1,5 @@
 #1 左移法
+#除法的效率比移位运算低很多
 class Solution:
     def NumberOf1(self, n):
         count, flag = 0, 1
