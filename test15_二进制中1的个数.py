@@ -14,6 +14,7 @@ class Solution:
         return count
         
 #减1做与运算
+#把一个整数减去1再和原来的整数做位与运算，得到的结果相当于把整数的二进制表示中最右边的1变成0。很多二进制问题都可以用这种方法
 class Solution:
     def NumberOf1(self, n):
         count = 0
