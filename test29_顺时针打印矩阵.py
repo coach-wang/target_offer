@@ -14,11 +14,11 @@ class Solution:
             #1.从左到右打印一行
             for a in range(i, endX + 1):
                 res.append(matrix[i][a])
-            #2.从上到下打印一列
+            #2.从上到下打印一列  前提：终止行号大于起始行号
             if endY > i:
                 for b in range(i + 1, endY + 1):
                     res.append(matrix[b][endX])
-            #3.从右到左打印一行
+            #3.从右到左打印一行  前提：圈内至少有两行两列，即要求终止行号大于起始行号且终止列号大于起始列号
             if endX > i and endY > i:
                 for c in range(endX - 1, i - 1, -1):
                     res.append(matrix[endY][c])
