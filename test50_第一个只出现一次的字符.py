@@ -17,3 +17,22 @@ class Solution:
             if Hash_Map[s[i]] == 1:
                 return i
         return -1
+
+#02 字符流中第一个不重复的字符
+class Solution:
+    # 返回对应char
+    def __init__(self):
+        self.s = ''
+        self.Hash_Map = {}
+        
+    def FirstAppearingOnce(self):
+        # write code here
+        for i in self.s:
+            if self.Hash_Map[i] == 1:
+                return i
+        return '#'
+    
+    def Insert(self, char):
+        # write code here
+        self.s += char
+        self.Hash_Map[char] = self.Hash_Map.get(char, 0) + 1
