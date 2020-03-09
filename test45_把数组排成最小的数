@@ -1,0 +1,16 @@
+'''
+自定义一种大小关系，证明见书
+'''
+class Solution:
+    def PrintMinNumber(self, numbers):
+        # write code here
+        length = len(numbers)
+        if (length == 0):
+            return ''
+        str_num = [str(i) for i in numbers]
+        for i in range(length - 1):
+            for j in range(length - 1 - i): #冒泡排序，每一次把最“大”的放到最后
+                if int(str_num[j] + str_num[j+1]) > int(str_num[j+1] + str_num[j]):
+                    str_num[j], str_num[j+1] = str_num[j+1], str_num[j]
+        num = ''.join(i for i in str_num)
+        return int(num)
