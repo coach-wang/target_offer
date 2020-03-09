@@ -1,0 +1,33 @@
+#方法1
+class Solution:
+    def StrToInt(self, s):
+        # write code here
+        if not s:
+            return 0
+        num = 0
+        if s[0] == '+':
+            num = self.StrToIntCore(s[1:])
+        elif s[0] == '-':
+            num = -1 * self.StrToIntCore(s[1:])
+        else:
+            num = self.StrToIntCore(s)
+            
+        if num > 2147483647 or num < -2147483648: #添加边界条件，不能大于最大正数或小于最小负数
+            return 0
+        return num
+    
+    def StrToIntCore(self, s):
+        num = 0
+        for i in s:
+            if i < '0' or i > '9':
+                return 0
+            num = num * 10 + int(i)
+        return num
+
+#方法2 用int函数偷鸡
+class Solution:
+    def StrToInt(self, s):
+        try:
+            return int(s)
+        except Exception as e:
+            return 0
